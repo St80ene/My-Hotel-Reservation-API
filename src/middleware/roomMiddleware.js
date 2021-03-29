@@ -21,5 +21,4 @@ export const hotelValidation = (req, res, next) => {
     res.status(400).json({ error: validation.error });
   }
   next();
-}
-
+};

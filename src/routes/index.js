@@ -9,6 +9,6 @@ router.get("/", function (_req, res, _next) {
 });
 
 router.use("/v1", version1Router);
-router.use("/hotel", hotelModel);
+router.use("/api/v1/hotels/", hotelModel);
 
 export default router;
