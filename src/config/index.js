@@ -1,5 +1,6 @@
 import dotEnvExtended from "dotenv-extended";
 import fs from "fs";
+import "regenerator-runtime/runtime.js";
 
 let environmentFile;
 
