@@ -8,6 +8,8 @@ const isValidHotel = Joi.object({
     city: Joi.string().required(),
     street: Joi.string().required(),
     number: Joi.number().integer().required(),
+    rooms: Joi.number().integer().required(),
+    rating: Joi.number().integer().required(),
   },
 
   rooms: Joi.number().integer().min(1).required(),

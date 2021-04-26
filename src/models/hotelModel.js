@@ -26,8 +26,7 @@ const hotelSchema = new Schema(
       },
     },
     rooms: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'room',
+      type: Number,
       required: true,
     },
     rating: {
