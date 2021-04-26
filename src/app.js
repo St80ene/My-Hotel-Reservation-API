@@ -6,6 +6,7 @@ import logger from "morgan";
 import config from "./config";
 // app modules
 import indexRouter from "./routes/index";
+const bodyParser = require("body-parser");
 
 const app = express();
 const { logFormat } = config;
@@ -15,6 +16,8 @@ app.use(cors({ optionsSuccessStatus: 200 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // mount routers
 app.use("/", indexRouter);
 
