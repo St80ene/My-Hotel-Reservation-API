@@ -16,7 +16,7 @@ const dbConnectionOptions = {
 
 if (
   process.env.MONGO_DB_AUTH === "true" &&
-  ["staging", "production"].indexOf(process.env.NODE_ENV) !== -1
+  ["staging", "production"].indexOf(process.env.NODE_ENV || 'development') !== -1
 ) {
   dbConnectionOptions.user = dbUser;
   dbConnectionOptions.pass = dbPassword;

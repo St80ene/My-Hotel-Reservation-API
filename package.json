@@ -13,7 +13,7 @@
     "server": "node ./dist/bootstrap/index.js ",
     "transpile": "babel src -d dist",
     "build": "yarn clean && yarn transpile",
-    "start": "export NODE_ENV=production && yarn build && yarn server ",
+    "start": "babel src -d dist && node ./dist/bootstrap/index.js ",
     "dev": "export NODE_ENV=development && yarn build && yarn server",
     "docs": "apidoc -i src/ -o apidoc/",
     "watch": "nodemon",
