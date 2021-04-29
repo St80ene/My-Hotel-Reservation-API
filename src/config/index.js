@@ -4,14 +4,16 @@ import "regenerator-runtime/runtime.js";
 
 let environmentFile;
 
+const env = process.env.NODE_ENV || 'development';
+
 // override the default values for these options in the dotenv-extended module
 const envOptions = {
-  errorOnMissing: process.env.NODE_ENV === "production",
+  errorOnMissing: env === "production",
   includeProcessEnv: true,
 };
 
 // Load appropriate env file for the environment
-switch (process.env.NODE_ENV) {
+switch (env) {
   case "development":
     environmentFile = ".env.local";
     break;
