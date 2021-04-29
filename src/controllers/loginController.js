@@ -15,13 +15,13 @@ class loginController {
       //checking if user is saved
       const savedUser = await signUpModel.findOne({ email: email });
 
-      if (!savedUser) return res.status(400).json({ message: "User does not exists!!" });
+      if (!savedUser) return res.status(400).json({ message: "Your records do not exist with us" });
 
       //comparing user's password
       const isValidPassword = bycrypt.compareSync(password, savedUser.password);
 
       if (!isValidPassword) {
-        return res.status(400).json({ status: 400, message: "Invalid password or email!!" });
+        return res.status(400).json({ status: 400, message: "Do you mind checking your password or email?" });
       }
       console.log(savedUser._id);
 
