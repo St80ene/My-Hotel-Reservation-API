@@ -34,7 +34,7 @@ if (fs.existsSync(environmentFile)) {
 dotEnvExtended.load(envOptions);
 
 const commonConfig = {
-  appPort: process.env.PORT || process.env.APPLICATION_PORT,
+  appPort: process.env.PORT || 4000,
   dbName: process.env.DATABASE_NAME,
   connectionString: process.env.DATABASE_URI,
   dbUser: process.env.DATABASE_USER,
