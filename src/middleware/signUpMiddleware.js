@@ -10,7 +10,9 @@ const isValidSignUp = Joi.object({
 export const signUpValidation = (req, res, next) => {
   const validation = isValidSignUp.validate(req.body);
   if (validation.error) {
-    return res.status(400).json({ error: validation.error });
+    return res
+      .status(400)
+      .json({ error: validation.error.details.map((error) => error.message.replace(/"/g, "")) });
   }
   next();
 };
