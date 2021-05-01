@@ -12,9 +12,9 @@
     "clean": "rimraf dist",
     "server": "node ./dist/bootstrap/index.js ",
     "transpile": "babel src -d dist",
-    "build": "clean transpile",
+    "build": "npm run clean && npm run transpile",
     "start": "babel src -d dist && node ./dist/bootstrap/index.js ",
-    "dev": "export NODE_ENV=development build server",
+    "dev": "export NODE_ENV=development npm run build && npm run server",
     "docs": "apidoc -i src/ -o apidoc/",
     "watch": "nodemon",
     "test": "jest --config ./jest.config.json"
