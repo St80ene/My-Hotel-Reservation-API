@@ -13,6 +13,6 @@ router.get("/", function (_req, res, _next) {
 router.use("/v1", version1Router);
 router.use("/api/v1/hotels/", hotelModel);
 router.use("/api/v1/login/", loginRoute);
-router.use("/api/v1/sign-up/", signUpRoute);
+router.use("/api/v1/signup/", signUpRoute);
 
 export default router;

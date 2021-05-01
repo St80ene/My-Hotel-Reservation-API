@@ -17,15 +17,16 @@ const dbConnectionOptions = {
 if (
   process.env.MONGO_DB_AUTH === "true" &&
   ["staging", "production"].indexOf(process.env.NODE_ENV || 'development') !== -1
-) {
-  dbConnectionOptions.user = dbUser;
-  dbConnectionOptions.pass = dbPassword;
-}
-
-function connectDataBase() {
-  logger.info("Establishing connection to Database...");
+  ) {
+    dbConnectionOptions.user = dbUser;
+    dbConnectionOptions.pass = dbPassword;
+  }
+  
+  function connectDataBase() {
+    logger.info("Establishing connection to Database...");
   mongoose.connect(connectionString, dbConnectionOptions, (error) => {
     if (error) {
+      logger.error(error.message);
       logger.error("Error: The server was not able to connect to Database");
       return;
     }
