@@ -12,15 +12,15 @@
     "clean": "rimraf dist",
     "server": "node ./dist/bootstrap/index.js ",
     "transpile": "babel src -d dist",
-    "build": "yarn clean && yarn transpile",
+    "build": "clean && transpile",
     "start": "babel src -d dist && node ./dist/bootstrap/index.js ",
-    "dev": "export NODE_ENV=development && yarn build && yarn server",
+    "dev": "export NODE_ENV=development build server",
     "docs": "apidoc -i src/ -o apidoc/",
     "watch": "nodemon",
     "test": "jest --config ./jest.config.json"
   },
   "nodemonConfig": {
-    "exec": "yarn dev",
+    "exec": "npm dev",
     "watch": [
       "src/*"
     ],
