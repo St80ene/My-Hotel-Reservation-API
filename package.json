@@ -12,7 +12,7 @@
     "clean": "rimraf dist",
     "server": "node ./dist/bootstrap/index.js ",
     "transpile": "babel src -d dist",
-    "build": "clean && transpile",
+    "build": "clean transpile",
     "start": "babel src -d dist && node ./dist/bootstrap/index.js ",
     "dev": "export NODE_ENV=development build server",
     "docs": "apidoc -i src/ -o apidoc/",
