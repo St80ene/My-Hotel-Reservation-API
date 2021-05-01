@@ -24,14 +24,13 @@ class SignUpController {
         phone: phone,
         password: hashedPassword,
       });
+      return res.status(200).json({ status: 200, message: "You have signed up successfully" });
       
-      MailService.sendMail({ to: [email] });
-      return res.status(200).json({ status: 200, message: "You have signed up successfully"});
     } catch (error) {
+      console.log("error =>", error);
       return res.status(500).json({ status: 500, message: error.message });
     }
   }
 }
 
 export default SignUpController;
-

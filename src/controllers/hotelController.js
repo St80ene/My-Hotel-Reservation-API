@@ -6,26 +6,27 @@ class HotelController {
   }
 
   async create(req, res) {
-    console.log(req.body);
     try {
-      let savedHotel = await hotelModel.findOne({ name: req.body.name })
-      console.log(savedHotel);
+      const { name, address, email, phone, password } = req.body;
+
+      //check if hotel already exists
+      let savedHotel = await hotelModel.findOne({ email: email });
+      
       if (savedHotel) return res.status(400).json({ status: 400, message: 'Hotel with this name already exists' });
       
-      const hotel = await hotelModel.create({
-        name: req.body.name,
-        address: {
-          state: req.body.address.state,
-          city: req.body.address.city,
-          street: req.body.address.street,
-          number: req.body.address.number,
-        },
-        rooms: req.body.rooms,
-        rating: req.body.rating,
+      //create a new hotel
+      await hotelModel.create({
+        name,
+        address,
+        email,
+        phone,
+        password
       });
-      res.status(200).json({ status: 200, message: "Hotel created successfully...", data: hotel });
+      return res.status(200).json({ status: 200, message: "Hotel created successfully..."});
+
     } catch (error) {
-      res.status(500).json({ message: error.details.message });
+      console.log(error);
+      // res.status(500).json({ message: error.details.message });
     }
   }
 

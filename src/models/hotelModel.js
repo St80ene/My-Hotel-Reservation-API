@@ -8,30 +8,19 @@ const hotelSchema = new Schema(
       required: true,
     },
     address: {
-      state: {
-        type: String,
-        required: true,
-      },
-      city: {
-        type: String,
-        required: true,
-      },
-      street: {
-        type: String,
-        required: true,
-      },
-      number: {
-        type: Number,
-        required: true,
-      },
-    },
-    rooms: {
-      type: Number,
+      type: String,
       required: true,
     },
-    rating: {
-      type: Number,
-      enum: [2, 3, 4, 5],
+    email: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true
+    },
+    password: {
+      type: String,
       required: true,
     },
   },
