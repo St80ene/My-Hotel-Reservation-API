@@ -27,7 +27,7 @@ Content-Type: application/json
 Content-Length: xy
 
 {
-   "apitoken": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   "message": "You have signed up successfully"
 }
 ```
 **Failed Response:**
@@ -38,7 +38,56 @@ Content-Type: application/json
 Content-Length: xy
 
 {
-    "code": 120,
+    "code": 400,
     "message": "invalid crendetials"
 }
 ``` 
+
+## Sign Up
+**You send:**  Your  sign up credentials.
+**You get:** A success message.
+
+**Request:**
+```json
+POST /signup HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Content-Length: xy
+
+{
+    "full_name": "foo",
+    "email": "example@gmail.com",
+    "phone": "08000000000",
+    "password": "yourpassword"
+}
+```
+**Successful Response:**
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: xy
+
+{
+   "message": "You have signed up successfully"
+}
+```
+**Failed Response:**
+```json
+HTTP/1.1 400 Bad Request
+Server: My RESTful API
+Content-Type: application/json
+Content-Length: xy
+
+{
+    "code": 400,
+    "message": "invalid crendetials"
+}
+``` 
+
+### User
+| HTTP METHOD | POST            | GET       | PUT         | DELETE |
+| ----------- | --------------- | --------- | ----------- | ------ |
+| CRUD OP     | CREATE          | READ      | UPDATE      | DELETE |
+| /user       | Create new user | List user | User update | Delete user |
+| /hotel      | Create new Hotel  | List users | Hotel Update | Delete Hotel |
+| /room      | Create new Room  | List Rooms | Room Update | Delete Room |
