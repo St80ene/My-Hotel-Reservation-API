@@ -45,8 +45,8 @@ class UserController {
 
   async update(req, res) {
     try {
-        let userId = req.params.id;
-        console.log(userId);
+      let userId = req.params.id;
+      
       const user = await signUpModel.findByIdAndUpdate(userId, req.body);
       if (user) {
         res.status(200).json({ status: 200, message: "Update successful!!"});
