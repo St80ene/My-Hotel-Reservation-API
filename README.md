@@ -84,7 +84,6 @@ Content-Length: xy
 }
 ``` 
 
-### User
 | HTTP METHOD | POST            | GET       | PUT         | DELETE |
 | ----------- | --------------- | --------- | ----------- | ------ |
 | CRUD OP     | CREATE          | READ      | UPDATE      | DELETE |
