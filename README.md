@@ -7,10 +7,10 @@
 ### /user
 #### CRUD operations on user
 
-| Method |    Description  |  URL | Params | 
-|------------------------------------------|
-| GET    | A list of users | /user |       |
-|------------------------------------------|
+| Method |    Description  |  URL  | Params | 
+| ------ | --------------  | ----  | ------ |
+| GET    | A list of users | /user | ------ |
+|------- | --------------  | ----- | -----  |
 
 
 | Syntax      | Description | Test Text     |
