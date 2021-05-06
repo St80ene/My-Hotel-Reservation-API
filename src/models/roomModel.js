@@ -1,14 +1,36 @@
-import mongoose, { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const roomSchema = new Schema(
   {
-    type: String,
-    price: Number,
-    hotel: {
+    room_name: {
+      type: String,
+      required: true,
+    },
+    total_occupants: {
+      type: Number,
+      required: true,
+    },
+    hotel_id: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'hotel'
-    }
+      ref: "hotel",
+      required: true,
+    },
+    customer_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    status: {
+      type: String,
+      enum: ["available", "reserved", "occupied"],
+      default: "available",
+      required: true,
+    },
   },
   { timestamps: true }
 );

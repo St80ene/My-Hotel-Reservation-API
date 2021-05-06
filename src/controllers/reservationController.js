@@ -1,6 +1,6 @@
-import roomModel from "../models/roomModel";
+import reservationModel from "../models/reservationModel";
 
-class RoomController {
+class ReservationController {
   constructor() {
     //
   }
@@ -9,7 +9,7 @@ class RoomController {
     const { room_name, total_occupants, price } = req.body;
 
     try {
-      const room = await roomModel.create({
+      const room = await reservationModel.create({
         room_name,
         total_occupants,
         hotel_id,
@@ -35,7 +35,7 @@ class RoomController {
   async getById(req, res) {
     try {
       const id = req.params.id;
-      const room = await roomModel.findById(id);
+      const room = await reservationModel.findById(id);
       if (room) {
         res.status(200).json({ status: 200, message: "Here's your search", data: room });
       } else {
@@ -50,7 +50,7 @@ class RoomController {
     // get the id from request
     try {
       let roomId = req.params.id;
-      const room = await roomModel.findByIdAndDelete(roomId, req.body);
+      const room = await reservationModel.findByIdAndDelete(roomId, req.body);
       if (room) {
         res.status(200).json({ status: 200, message: `User deleted` });
       } else {
@@ -64,7 +64,7 @@ class RoomController {
   async update(req, res) {
     try {
       let roomId = req.params.id;
-      const room = await roomModel.findByIdAndUpdate(roomId, req.body);
+      const room = await reservationModel.findByIdAndUpdate(roomId, req.body);
       if (room) {
         res.status(200).json({ status: 200, message: "Update successful!!" });
       } else {
@@ -76,4 +76,4 @@ class RoomController {
   }
 }
 
-export default RoomController;
+export default ReservationController;
