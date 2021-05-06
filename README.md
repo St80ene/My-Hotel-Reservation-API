@@ -9,8 +9,7 @@
 
 | Method |    Description  |  URL  | Params | 
 | ------ | --------------  | ----  | ------ |
-| GET    | A list of users | /user | ------ |
-|------- | --------------  | ----- | -----  |
+| GET    | A list of users | /user |        |
 
 
 | Syntax      | Description | Test Text     |
