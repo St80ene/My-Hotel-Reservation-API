@@ -59,7 +59,7 @@ class HotelController {
       let hotelId = req.params.id;
       const hotel = await hotelModel.findByIdAndDelete(hotelId, req.body);
       if (hotel) {
-        res.status(200).json({ status: 200, message: "Delete successful", data: hotel });
+        res.status(200).json({ status: 200, message: `${hotel.name} deleted successfully`});
       } else {
         throw new Error("Hotel with this ID was not found");
       }
