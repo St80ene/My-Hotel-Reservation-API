@@ -1,23 +1,44 @@
 # Hotel-Reservation-API
 ## An API that handles requests to Hotel Reservation App
-## Base URL : https://my-hotel-reservation-app.herokuapp.com/api/v1
+#### Base URL : https://my-hotel-reservation-app.herokuapp.com/api/v1
 
-### API Endpoints
+This API uses `HTTP VERBS` to communicate and HTTP [response codes] to indenticate status and errors. All responses come in standard JSON. All requests must include a `content-type` of `application/json` and the body must be valid JSON.
 
-### /user
-#### CRUD operations on user
+## Login
+**You send:**  Your  login credentials.
+**You get:** An `API-Token` with which you can make further actions.
 
-| Method |    Description  |  URL  | Params | 
-| ------ | --------------  | ----  | ------ |
-| GET    | A list of users | /user |        |
+**Request:**
+```json
+POST /login HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Content-Length: xy
 
+{
+    "email": "example@gmail.com",
+    "password": "1234567" 
+}
+```
+**Successful Response:**
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: xy
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+{
+   "apitoken": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
+```
+**Failed Response:**
+```json
+HTTP/1.1 400 Bad Request
+Server: My RESTful API
+Content-Type: application/json
+Content-Length: xy
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+{
+    "code": 120,
+    "message": "invalid crendetials"
+}
+``` 
