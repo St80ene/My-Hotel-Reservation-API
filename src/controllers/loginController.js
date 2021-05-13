@@ -21,7 +21,7 @@ class loginController {
       const isValidPassword = bycrypt.compareSync(password, savedUser.password);
 
       if (!isValidPassword) {
-        return res.status(400).json({ status: 400, message: "Do you mind checking your password or email?" });
+        return res.status(400).json({ status: 400, message: "invalid crendetials" });
       }
       console.log(savedUser._id);
 
