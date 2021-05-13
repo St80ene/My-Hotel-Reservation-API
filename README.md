@@ -39,7 +39,7 @@ This API uses HTTP VERBS to communicate and HTTP [response codes] to indenticate
 | `error`      | `Object` | *status* : 400, *message*: "Your records do not exist with us"|
 | `error`      | `Object` | *status* : 400, *message*: "invalid crendetials"|
 
-### CRUD Operations on Users
+### Users
 
 #### Get all Users
 
@@ -101,7 +101,7 @@ This API uses HTTP VERBS to communicate and HTTP [response codes] to indenticate
 | `error`      | `Object` | *status* : 400, *message*: "User with this ID was not found"  |
 
 
-### CRUD Operation on Hotels
+### Hotels
 
 #### Get all Hotels
 
@@ -181,7 +181,7 @@ This API uses HTTP VERBS to communicate and HTTP [response codes] to indenticate
 | `success`      | `Object` | *status* : 200, *message*: "${hotel.name} deleted" |
 | `error`      | `Object` | *status* : 400, *message*: "Hotel with this ID was not found"  |
 
-### CRUD Operations on Rooms
+### Rooms
 
 #### Get all Rooms
 
@@ -260,7 +260,7 @@ This API uses HTTP VERBS to communicate and HTTP [response codes] to indenticate
 | `success`      | `Object` | *status* : 200, *message*: "Room deleted" |
 | `error`      | `Object` | *status* : 400, *message*: "Room with this ID was not found"  |
 
-### CRUD Operations on Reservation
+### Reservation
 
 #### Get all Reservations
 
