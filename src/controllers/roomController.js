@@ -52,7 +52,7 @@ class RoomController {
       let roomId = req.params.id;
       const room = await roomModel.findByIdAndDelete(roomId, req.body);
       if (room) {
-        res.status(200).json({ status: 200, message: `User deleted` });
+        res.status(200).json({ status: 200, message: `Room deleted` });
       } else {
         throw new Error("Room with this ID was not found");
       }

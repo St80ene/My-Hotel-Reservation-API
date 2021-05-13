@@ -73,7 +73,7 @@ class HotelController {
       let hotelId = req.params.id;
       const hotel = await hotelModel.findByIdAndUpdate(hotelId, req.body);
       if (hotel) {
-        res.status(200).json({ status: 200, message: "Update successful...", data: hotel });
+        res.status(200).json({ status: 200, message: "Update successful..."});
       } else {
         throw new Error("Hotel with this ID does not exist");
       }
